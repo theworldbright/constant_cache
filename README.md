@@ -69,7 +69,7 @@ We can use the plugin to cache the data in the table:
     class AccountStatus # uses ActiveRecord or DataMapper
       include ConstantCache
       
-      cache_constants
+      caches_constants
     end
 
 Now you can write code that's a little cleaner and not use multiple unnecessary find calls:
@@ -82,7 +82,7 @@ we have :name, :slug, and :description, we can use 'slug' instead:
     class AccountStatus # uses ActiveRecord or DataMapper
       include ConstantCache
       
-      cache_constants :key => :slug
+      caches_constants :key => :slug
     end
   
 The value for the constant is truncated at 64 characters by default, but you can adjust this as
@@ -91,7 +91,7 @@ well:
     class AccountStatus # uses ActiveRecord or DataMapper
       include ConstantCache
       
-      cache_constants :limit => 16
+      caches_constants :limit => 16
     end
 
 ## Acknowlegements
